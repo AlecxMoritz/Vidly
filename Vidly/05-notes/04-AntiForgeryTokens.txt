@@ -1,0 +1,14 @@
+﻿AntiForgery Tokens combat CSRF
+
+Cross-Site Request Forgery
+
+This is a hacker tactice.
+In practice they would lead a user(who still has their token saved in local storage),
+away from a website, and on the new page have an tiny iframe with a bit of javascript code in it,
+and in the that code, they can send a request using the victim's token.
+They could execute any code on that on behalf of the victim, and leave no ip address to chase as they come from the victim's own browser.
+
+This is Cross-Site Request Forgery
+
+So at the end of our forms we use
+ @Html.AntiForgeryToken();

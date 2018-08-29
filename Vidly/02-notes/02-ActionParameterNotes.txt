@@ -1,0 +1,13 @@
+﻿Action results are the output of our actions
+
+Action parameters are the -inputs- of our actions
+
+When a request comes in the MVC framework automatically maps request data to paramater values for action methods.
+It looks for a parameter of the same name and passes the data to the target action
+The data could come from a number of PARAMETER SOURCES
+	in the URL : /movies/edit/{1}
+	in the query string : /movies/edit?id=1
+	in the form data = : id=1
+
+	Two Params in Query String /movies?pageIndex=2&sortBy=Date
+

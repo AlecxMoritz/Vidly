@@ -1,0 +1,37 @@
+﻿A view model is a mode specifically built for a view. 
+
+By convention they have their own folders, and are named withe the ViewModel suffix
+They contain any rules of daata associated with a certain view
+
+// the model
+
+namespace Vidly.ViewModels
+{
+    public class RandomMoviewViewModel
+    {
+        public Movie Movie { get; set; }
+        public List<Customer> Customers { get; set; }
+    }
+}
+
+
+// using the model
+
+public ActionResult Random()
+        {
+            Movie movie = new Movie() { Name = "The Breakfast Club" };
+            var customers = new List<Customer>
+            {
+                new Customer { Name = "Alecx" },
+                new Customer { Name = "Sarah"}
+            };
+
+            var viewModel = new RandomMoviewViewModel
+            {
+                Movie = movie,
+                Customers = customers
+            };
+
+
+            return View(viewModel);
+        }

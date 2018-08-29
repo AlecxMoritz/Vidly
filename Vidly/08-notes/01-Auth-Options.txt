@@ -1,0 +1,9 @@
+﻿Options for Authentication in ASP.NET
+
+No Auth - useful for sites that need no auth, and allow anon users
+
+Individual User Accouts - ASP.NET default, and the defacto for ASP.NET websites. Allows for account creation, and also allows us to log in using other social media 
+
+Organizational Accounts - Useful for allowing simple sign on for internal apps
+
+Windows Authentication - Useful for desktop applications that need a sign on

@@ -1,0 +1,18 @@
+﻿@model Vidly.ViewModels.CustomerDetailViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Customer.Name</h2>
+<div>
+    <h3>Details</h3>
+    <p>@Model.MembershipType.TypeName</p>
+
+    @if (Model.Customer.Birthdate.HasValue)
+    {
+        <p>@Model.Customer.Birthdate.ToString()</p>
+    }
+
+
+</div>

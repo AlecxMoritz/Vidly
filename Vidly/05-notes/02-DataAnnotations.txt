@@ -1,0 +1,11 @@
+﻿Data Annotations
+
+[Range(1, 10)] <-- to specify the minimum and maximum that the field can accept
+[Compare("OtherProperty")] -- to compare two properties, like password and comparePassword
+[Phone]
+[EmailAddress]
+[Url]
+[RegularExpression("...")]
+
+To override defaut error messages
+[Required(ErrorMessage = "Please enter customer's name.")]

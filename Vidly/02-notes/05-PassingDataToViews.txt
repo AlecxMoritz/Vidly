@@ -1,0 +1,50 @@
+﻿// Passing Data to Views
+
+Obsolete way of passing data to the view
+
+public ActionResult Random()
+        {
+            Movie movie = new Movie() { Name = "The Breakfast Club" };
+
+			ViewData["Movie"] = movie;
+
+            return View(movie);
+             
+        }
+
+then in the view
+<h2>@( ((Movie) ViewData["Movie"]).Name )</h2>
+
+obviously this is really gross,
+sadly, microsoft also inplemented another gross way to passing data to the view
+introdcuing ViewBag
+
+        public ActionResult Random()
+        {
+            Movie movie = new Movie() { Name = "The Breakfast Club" };
+				//	(1)
+            ViewBag.Movie = movie;
+
+            return View();
+        }
+
+Do get the data back out of the view bag would include a cast and using the . operator to parse through the data, so if we ever change the name(1) we'd hav
+			we'd have to back back into the view itself and change it there too
+
+
+The best way to pass data to the view is following
+
+public ActionResult Random()
+        {
+            Movie movie = new Movie() { Name = "The Breakfast Club" };
+
+
+            return View(movie);
+        }
+
+Short, sweet, and to the point, but where exactly does that movie go?
+
+ViewResult viewResult = new ViewResult();
+viewResult.ViewData.Model = movie;
+
+but we don't have to write all that

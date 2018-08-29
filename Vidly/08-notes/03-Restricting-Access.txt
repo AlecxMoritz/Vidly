@@ -1,0 +1,39 @@
+﻿Restricting Access
+
+[Authorize]  <---- this is called a 'filter' **
+public ActionResult Index()
+{
+	....
+}
+
+** the filter is called before, and after an action is executed, 
+So anyone trying to visit this page that isn't logged in will be redirect to the login page
+because right now we're requring them to be logged in.
+
+An interesting note, is in the URL of the login page we get redirected to, we can actually see the target page we tried to get to
+first
+
+If the [Authorize] filter is going to be applied to a whole controller the [Authorize] filter is applied at the top of a controller, 
+that way you don't need to attach [Authorize] to every method
+
+Another note
+
+[AllowAnonymous] <-- is the way to override the [Authorize], on say a register method, in an [Authorize]'d account controller
+(like they do in ASP.NET Identity)
+
+
+To restrict access over an entire application you add a new filter to the app.
+
+Inside FilterConfig.cs inside the App_Start directory
+
+public static void RegisterGlobalFilters(GlobalFilterCollection filter)
+{
+	filters.Add(new HandleErrorAttribute()); <-- this redirects user to an error page when the application errs
+	vvvv
+	filters.Add(new AuthorizeAttribute());
+	^^^^
+}
+
+****
+
+You can also add [AllowAnonymous] to entire controllers

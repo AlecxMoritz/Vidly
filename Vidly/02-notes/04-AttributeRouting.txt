@@ -1,0 +1,23 @@
+﻿in MVC 5 Microsoft introduced attribute routing,
+which makes it easier and cleaner to create customer routes
+
+
+in the routes//
+
+routes.MapMVCAttributeRoutes();
+
+
+
+in the controller //
+
+[Route("movies/released/{year:regex(\\d{4})}/{month:regex(\\d{2}):range(1, 12)}")]
+
+other constraints you that can be used ith attribute routing
+
+	// min
+	// max
+	// minlength
+	// maxlength
+	// int
+	// float
+	// guid

@@ -1,0 +1,6 @@
+﻿IHttpActionResult
+
+IHttpActionResult is an interface with many classes
+Implementing it gives you access to helper methods that will allow you to create a
+new instance of one of the classes that derives from it.
+

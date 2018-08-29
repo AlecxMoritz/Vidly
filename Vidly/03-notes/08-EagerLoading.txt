@@ -1,0 +1,16 @@
+﻿Eager Loading
+
+By default Entity Framework does not load related objects, so we need to tell it to
+
+public ActionResult Index()
+        {										// this is the Include() which we can use to include an objects related types, 
+												// here the c represents our table
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
+
+            CustomersViewModel viewModel = new CustomersViewModel
+            {
+                Customers = customers
+            };
+
+            return View(viewModel);
+        }

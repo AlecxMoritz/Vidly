@@ -1,0 +1,34 @@
+﻿Querying the Database
+
+In the end-tier world, no one hard codes their data
+
+They get their data from a database, API, or somewhere else
+
+The first thing you need when querying the db is a connection, or gateway to the db
+By convention we declare it like this
+
+private ApplicationDbContext context;
+
+And we have to initialize it in our constructor, and create a way to dispose of it
+
+public CustomerController()
+{
+	_context = new ApplicationDbContext;
+}
+
+public override void Dispose(bool disposing)
+{
+	_context.Dispose();
+}
+
+Then we can access the data in out database with the . operator
+
+_context.Customers << -- returns the Customers in the database
+
+// another note is that [ var customers = _context.Customers;] does not immediately run the query, the query is instead executed when 
+ [customers] would be iterated over
+
+// a way around this however is to call a method on the _context
+Ex:
+
+	var customers = _context.Customers.ToList();

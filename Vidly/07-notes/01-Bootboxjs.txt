@@ -1,0 +1,24 @@
+﻿BootboxJs
+
+Bootbox is a useful jQuery plugin for creating nicer looking 'alert' boxes using Bootstrap modals, with less code
+
+We insteall bootbox using the package-manager console, then us it in our javascript
+
+$("#customers").on("click", ".js-delete", function () {
+                var button = $(this);
+                bootbox.confirm("Are you sure you want to delete this customer?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "DELETE",
+                            success: function () {
+                                table.row(button.parents("tr")).remove().draw();
+                            }
+                        });
+                    }
+                });
+            });
+
+usually we attach a class, and an class to our table so we can use it more easily. And we put a class on our button so we can use this more easily as well.
+
+So in this example, our table has an ID of "customers", and our button has a class of 'js-delete'.

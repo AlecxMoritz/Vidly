@@ -1,0 +1,32 @@
+﻿The compiler can automatically parse HTML, as we can write HTML and access our C# code through the A operator
+
+@* (multiline comments in razor)
+You can do conditionaly apply classes with razor (1)
+You can do conditoinal stylying with razor (2)
+We can nest out C# in out html (3)
+*@
+
+
+
+
+@{		  //(1)
+    var className = Model.Customers.Count > 5 ? "popular" : null;
+}
+
+             //(1)
+<h2 class="@className">@Model.Movie.Name</h2>
+
+@if(Model.Customers.Count == 0) //(2)
+{
+    <p>No one has rented this movie before.</p>
+} else
+{
+    <ul>
+    @foreach (var customer in Model.Customers) //(3)
+    {
+        <li>@customer.Name</li>
+    }
+    </ul>
+}
+
+the 'text' keyword is not part of HTML, but the razor compiler understands this word

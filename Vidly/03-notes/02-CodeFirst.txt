@@ -1,0 +1,8 @@
+﻿Code First Entity Framework
+
+Code First 
+
+Increases Productivity
+Get Access to full versioning of database
+	- meaning that you can migrate the database back to an earlier state
+Makes Integration tests much simplier

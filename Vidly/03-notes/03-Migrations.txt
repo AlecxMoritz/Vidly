@@ -1,0 +1,23 @@
+﻿Migrations in Code First Entity Framework
+
+Whenever we add another DbSet, or change it, or make any change to our db, we're going to have to run a migration
+
+NuGet Package Manager Console is where we will manage our migrations
+	- note it is not case sensitive
+
+Before you get started with migrations you have to enable them:
+PM> enable-migrations
+
+The you add the migrations
+PM> add-migration [migrationName]
+
+
+
+//
+
+you can use 'cls' to clear the console screen
+PM> cls
+
+
+the -force switch - used for overwriting a migration
+PM> add-migration [alreadyExistingMigration] -force

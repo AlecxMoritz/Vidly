@@ -1,0 +1,19 @@
+﻿
+When working with changing data models in our database,
+we should always aim towords small migrations, instead
+of doing everything in one big go
+
+// inside the customer model
+public MembershipType MembershipType { get; set; }
+
+this is a navigation property, and it allows us to navigate from one type to another
+It is useful when you want to load and object and it's related objects together from a database
+
+Sometime however, you don't want the whole thing,
+just part of it, by convetion, with the membership type example,
+you would do so like this:
+
+public byte MembershipTypeId { get; set; }
+
+Entity framework recognizes this convention and adds it as a foreign key property
+

@@ -1,0 +1,11 @@
+﻿Entity Framework is a ORM for working with a Database
+Like Sequelize is to JavaScript, Entity is to ASP.NET
+
+It maps data in our database to objects in our application
+
+Entity Framework provides a class called DbContext that is a gateway to our database
+A DbContext has one or more DbSet(s) which represent tables in our database
+
+We use LINQ to query the DbSets, which is translated to SQL at runtime
+
+When we use Entity Framework, it will keep track of data, and when we ask it to, it will generate SQL statements and execute them on our database

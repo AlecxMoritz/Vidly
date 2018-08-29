@@ -1,0 +1,25 @@
+﻿AutoMapper to install AutoMapper
+
+inside the Nuget Package Manager
+run 
+
+install-package automapper --verion:4.1
+
+this is the one you've worked with
+
+you then need to create a mapping profile, which will be a class in App_Start
+
+public MappingProfile()
+        {
+            Mapper.CreateMap<Customer, CustomerDto>();
+            Mapper.CreateMap<CustomerDto, Customer>();
+        }
+
+
+Then inside the Global.asax.cs file need to get it started
+
+ Mapper.Initialize(c => c.AddProfile<MappingProfile>());
+
+Then you can use automapper to map objects to objects of different types.
+Automapper is a CONVENTION based mapper,
+so it looks for properties of the same name and maps the values to each other.

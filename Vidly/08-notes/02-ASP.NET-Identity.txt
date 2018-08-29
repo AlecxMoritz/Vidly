@@ -1,0 +1,11 @@
+﻿ASP.NET Identity
+
+ASP.NET Identity originated as ASP.NET Membership, however there were several issues and over the years it was improved and
+rebranded into ASP.NET Identity
+
+Identity comes with multile domain classes and simple APIs to work with these classes
+
+The APIs consist of UserManager, RoleManager, SignInManager, and so on and so forth
+And they talk internally to another group of classes like UserStore and RoleStore, which represent the persistence store of ASP.NET Identity
+
+Identity provides an implementation using Entity Framework and a relational SQL database

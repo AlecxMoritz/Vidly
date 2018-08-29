@@ -1,0 +1,4 @@
+﻿Validation
+
+ASP.NET does validation based of annotations
+and using ModelState.IsValid, we can check to see if an object passes those checks or not

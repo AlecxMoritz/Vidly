@@ -1,0 +1,16 @@
+﻿Partial views are ways to break large views out into smaller resuable chunks
+
+By convention, they are named with an underscore prefix
+_NavBar
+
+
+Make sure you check the 'create as partial' when creating partials, as we don't want them to have a layout
+
+Partials are just average old razor and c# thats called through the Html helper class
+
+@Html.Partial("_NavBar");
+
+we pass in the partial we want to call as a string
+
+You can also pass a model along with the partial
+@Html.Partial("_NavBar", Model.[property]);

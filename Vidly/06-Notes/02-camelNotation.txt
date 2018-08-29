@@ -1,0 +1,13 @@
+﻿By default the webAPI is going to send the response back with PascallCasing,
+which isnt awful except that our JSON responses are going to be used in JavaScript programming, 
+and because JavaScript uses camelCasing, it going to make our code look ugly.
+
+inside the WebAPI.config file
+
+var settings = config.Formatters.JsonFormatter.SerializerSettings;
+
+            settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            settings.Formatting = Newtonsoft.Json.Formatting.Indented;
+
+	You would need to change these settings
+	and WHAM camelCasing JSONs 

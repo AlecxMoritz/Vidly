@@ -1,0 +1,13 @@
+﻿Understanding The Problem
+
+Before you start to code at all, you have to know exactly what problem you are trying to solve.
+
+And you need to know HOW that will be happening
+		or you 'inputs and outputs'
+		What data are you taking in, and what are you sending back
+
+
+
+Technically, there nothing wrong with starting on the front end or the back end, however, starting on the front end can lead to complex designs,
+	and those design bleeding into the back end, and you could end up over-engineering
+

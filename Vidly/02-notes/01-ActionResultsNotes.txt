@@ -1,0 +1,14 @@
+﻿Diffent types of ActionResults
+
+Helper Method - Type
+
+View() - ViewResult
+PartialView() - PartialViewResult
+Content() - ContentResult
+Redirect() - RedirectResult
+RedirectToAction() - RedirectoToRouteResult
+Json() - JsonResult
+File() - FileResult
+HttpNotFound() HttpNotFoundResult (404)
+EmptyResult -- when nothing is returned, like void
+

@@ -1,0 +1,31 @@
+﻿Sometimes you want some custom kind stuff
+
+when ever you make a new route you will first call
+
+route.MapRoute();
+
+You always need to make sure the most specific routes are at the top, that way a very generic route doesn't end up being applied to a very specific url,
+
+
+this is the most common overload the route.MapRoute(); it takes three parameters
+
+route.MapRute(
+	"MoviesByResleaseDate", // route name
+	"movies/released/{year}/{month}, // url pattern, notice only year and month are in curlies
+	new { controller = "Movies", action = "ByReleaseDate",  // now we need to specify the defaults, 
+			// and we'll do it with an anonymous object >> 1. define controller 2. define the method to use
+	new { year = @"\d{4}", month = @"\d{2}"}); // we can also pass in contstraints, and we can user regular expressions to set the required number of digits. 
+			// notice the use of verbatim strings to get arounding needing to use \\d to escape the quotes
+
+
+
+More contstraint goodies::
+
+you can also look have specific values in the constraints
+
+	new { year = @"2015 | 2016", month = @"\d{2} "});
+				// notice the pipe right here means 2015 OR 2016
+
+
+clean and sleek way to write routes
+

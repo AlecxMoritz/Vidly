@@ -1,0 +1,15 @@
+﻿ASP.NET Ships with jQuery client side validation, which will make sure the data is in the right format
+before sending the request.
+
+Enabling it is simple
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+
+Underneath the end of your .cshtml file
+
+Now there will not be a request made unless the data is in the correct format
+for the server/db to process the request
